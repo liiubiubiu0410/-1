@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>贪吃蛇游戏</h1>
+        
+        <div class="game-layout">
+            <div class="game-sidebar-left">
+                <!-- 游戏规则 -->
+                <div class="activity-rules">
+                    <h2>游戏规则</h2>
+                    <ul>
+                        <li>使用方向键控制贪吃蛇移动</li>
+                        <li>吃到食物可以增加分数和蛇的长度</li>
+                        <li>撞到墙壁或自己的身体游戏结束</li>
+                        <li>随着分数增加，蛇的移动速度会加快</li>
+                        <li>合理利用蛇的长度可以获得更高分数</li>
+                        <li>祝您游戏愉快！</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="game-main">
+                <!-- 游戏信息区域 -->
+                <div class="game-info">
+                    <div class="score-board">
+                        <p>分数: <span id="score">0</span></p>
+                        <p>等级: <span id="level">1</span></p>
+                    </div>
+                </div>
+                
+                <!-- 游戏画布 -->
+                <div class="game-container">
+                    <canvas id="gameCanvas" width="400" height="400"></canvas>
+                </div>
+                
+                <!-- 游戏状态消息 -->
+                <div class="game-status">
+                    <p class="status-message" id="statusMessage"></p>
+                </div>
+                
+                <!-- 控制按钮 -->
+                <div class="controls">
+                    <button id="start-btn">开始游戏</button>
+                    <button id="pause-btn">暂停游戏</button>
+                    <button id="reset-btn">重置游戏</button>
+                    <button id="clear-data-btn">清除数据</button>
+                </div>
+                
+                <!-- 颜色选择器 -->
+                <div class="color-picker">
+                    <h3>自定义颜色</h3>
+                    <div class="color-picker-item">
+                        <label for="snakeHeadColor">蛇头颜色:</label>
+                        <input type="color" id="snakeHeadColor" value="#e74c3c">
+                    </div>
+                    <div class="color-picker-item">
+                        <label for="snakeBodyColor">蛇身体颜色:</label>
+                        <input type="color" id="snakeBodyColor" value="#2ecc71">
+                    </div>
+                    <div class="color-picker-item">
+                        <label for="snakeBorderColor">蛇边框颜色:</label>
+                        <input type="color" id="snakeBorderColor" value="#27ae60">
+                    </div>
+                    <div class="color-picker-item">
+                        <label for="foodColor">食物颜色:</label>
+                        <input type="color" id="foodColor" value="#f39c12">
+                    </div>
+                </div>
+                
+                <!-- 游戏说明 -->
+                <div class="instructions">
+                    <h3>操作说明</h3>
+                    <p>使用键盘上的方向键控制蛇的移动方向，或者在移动设备上使用触摸控制。</p>
+                </div>
+                
+                <!-- 触摸控制 (移动设备显示) -->
+                <div class="touch-controls">
+                    <div class="dpad">
+                        <div class="dpad-item">
+                            <button class="touch-button" id="upBtn">↑</button>
+                        </div>
+                        <div class="dpad-item">
+                            <button class="touch-button" id="leftBtn">←</button>
+                            <button class="touch-button" id="downBtn">↓</button>
+                            <button class="touch-button" id="rightBtn">→</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="game-sidebar-right">
+                <!-- 这里可以添加更多侧边栏内容 -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript 文件 -->
+    <script src="js/game.js"></script>
+    <script src="js/gameState.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/colorPicker.js"></script>
+    <script src="js/sound.js"></script>
+</body>
+</html>
